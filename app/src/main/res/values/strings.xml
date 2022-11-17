@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SayapRaja</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="selamat_datang_di_sayap_raja">Selamat Datang di SAYAP RAJA</string>
+    <string name="silakan_masukan_username_dan_password_anda">Silakan Masukan Username dan Password Anda</string>
+    <string name="login">Login</string>
+</resources>
