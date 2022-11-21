@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "442936643038",
+    "firebase_url": "https://sayapraja-b56d6-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sayapraja-b56d6",
+    "storage_bucket": "sayapraja-b56d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442936643038:android:9fd412b82408e915e8e14f",
+        "android_client_info": {
+          "package_name": "com.adrianusid.sayapraja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442936643038-kajjj5qt5t0rle8bhb3c1jjsmodih35j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJFUg0nRoaLbQhnAJ27ulNmF-DkD3pctA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442936643038-kajjj5qt5t0rle8bhb3c1jjsmodih35j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
