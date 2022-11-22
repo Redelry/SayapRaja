@@ -11,4 +11,23 @@
     <string name="menu_1">Menu 1</string>
     <string name="menu_2">Menu 2</string>
     <string name="mau_cari_pekerjaan_apa_hari_ini">Mau cari pekerjaan apa hari ini?</string>
+    <string name="masukkan_syarat">Masukkan Syarat</string>
+    <string name="syarat">Syarat</string>
+    <string name="masukkan_deskripsi">Masukkan Deskripsi</string>
+    <string name="deskripsi_pekerjaan">Deskripsi Pekerjaan</string>
+    <string name="masukkan_posisi">Masukkan Posisi</string>
+    <string name="posisi_lowongan">Posisi Lowongan</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="alamat_perusahaan">Alamat Perusahaan</string>
+    <string name="nama_perusahaan">Nama Perusahaan</string>
+    <string name="masukkan_posisi_pekerjaan">Masukkan Posisi Pekerjaan</string>
+    <string name="masukkan_kriteria">Masukkan Kriteria</string>
+    <string name="posisi">Posisi</string>
+    <string name="kriteria_pendukung">Kriteria Pendukung</string>
+    <string name="masukkan_password">Masukkan Password</string>
+    <string name="masukkan_username">Masukkan Username</string>
+    <string name="masukkan_tanggal_lahir">Masukkan Tanggal Lahir</string>
+    <string name="masukkan_nama_lengkap">Masukkan Nama Lengkap</string>
+    <string name="masukkan_ulang_password">Masukkan Ulang Password</string>
+    <string name="belum_punya_akun_silakan_klik_disini">Belum Punya Akun? Silakan Klik Disini</string>
 </resources>

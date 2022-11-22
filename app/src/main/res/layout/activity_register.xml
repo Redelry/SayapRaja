@@ -70,7 +70,7 @@
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
 
-                    android:hint="Masukkan Password"
+                    android:hint="@string/masukkan_password"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
 
-                    android:hint="Masukkan Username"
+                    android:hint="@string/masukkan_username"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -98,7 +98,7 @@
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
 
-                    android:hint="Masukkan Tanggal Lahir"
+                    android:hint="@string/masukkan_tanggal_lahir"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +111,7 @@
                     android:layout_marginTop="36dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
-                    android:hint="Masukkan Nama Lengkap"
+                    android:hint="@string/masukkan_nama_lengkap"
 
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
-                    android:hint="Masukkan Ulang Password"
+                    android:hint="@string/masukkan_ulang_password"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
-                    android:text="Belum Punya Akun? Silakan Klik Disini"
+                    android:text="@string/belum_punya_akun_silakan_klik_disini"
                     android:textColor="?attr/mplusroundedBold"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"

@@ -71,7 +71,7 @@
                     android:elevation="20dp"
                     android:textAlignment="center"
 
-                    android:hint="Masukkan Username"
+                    android:hint="@string/masukkan_username"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/instruction" />
@@ -85,7 +85,7 @@
                     android:background="@drawable/inputbg"
                     android:textAlignment="center"
                     android:elevation="20dp"
-                    android:hint="Masukkan Password"
+                    android:hint="@string/masukkan_password"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/username" />
@@ -114,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
-                    android:text="Belum Punya Akun? Silakan Klik Disini"
+                    android:text="@string/belum_punya_akun_silakan_klik_disini"
                     android:textColor="?attr/mplusroundedBold"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"

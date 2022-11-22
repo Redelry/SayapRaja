@@ -69,7 +69,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
-                    android:hint="Masukkan Posisi Pekerjaan"
+                    android:hint="@string/masukkan_posisi_pekerjaan"
 
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
-                    android:hint="Masukkan Kriteria"
+                    android:hint="@string/masukkan_kriteria"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
