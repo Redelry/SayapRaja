@@ -4,8 +4,11 @@
     <string name="selamat_datang_di_sayap_raja">Selamat Datang di SAYAP RAJA</string>
     <string name="silakan_masukan_username_dan_password_anda">Silakan Masukan Username dan Password Anda</string>
     <string name="silakan_masukan_data_diri_anda">Silakan Masukan Data Diri Anda</string>
+    <string name="silakan_buat_lowongan">Mau buat lowongan pekerjaan apa di hari ini?</string>
     <string name="login">Login</string>
+    <string name="buat_lowongan">Buat Lowongan</string>
     <string name="search">Search</string>
     <string name="menu_1">Menu 1</string>
     <string name="menu_2">Menu 2</string>
+    <string name="mau_cari_pekerjaan_apa_hari_ini">Mau cari pekerjaan apa hari ini?</string>
 </resources>
