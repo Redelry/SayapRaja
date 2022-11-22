@@ -8,42 +8,168 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="32dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="218dp"
-                android:layout_height="131dp"
-                android:layout_marginTop="20dp"
-                android:elevation="20dp"
+                android:id="@+id/ImageView"
+                android:layout_width="282dp"
+                android:layout_height="168dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/formLogin"
+                android:layout_width="407dp"
+                android:layout_height="531dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ImageView">
+
+
+                <TextView
+                    android:id="@+id/welcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/mplusrounded1c_bold"
+                    android:text="@string/selamat_datang_di_sayap_raja"
+                    android:textColor="?attr/mplusroundedBold"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/instruction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/mplusrounded1c_medium"
+                    android:text="@string/silakan_masukan_data_diri_anda"
+                    android:textColor="?attr/mplusroundedMedium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/welcome" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+
+                    android:hint="Masukkan Password"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/username4" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username4"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+
+                    android:hint="Masukkan Username"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/username3" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username3"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+
+                    android:hint="Masukkan Tanggal Lahir"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/username2" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username2"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="36dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+                    android:hint="Masukkan Nama Lengkap"
+
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/instruction" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+                    android:hint="Masukkan Ulang Password"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/username" />
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="146dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/roundedbutton"
+                    android:elevation="20dp"
+                    android:fontFamily="@font/mplusrounded1c_bold"
+                    android:text="@string/login"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.471"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/password" />
+
+                <TextView
+                    android:id="@+id/reg_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/mplusrounded1c_bold"
+                    android:text="Belum Punya Akun? Silakan Klik Disini"
+                    android:textColor="?attr/mplusroundedBold"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.513"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_login"
+                    app:layout_constraintVertical_bias="0.055" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="146dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/roundedbutton"
-        android:elevation="20dp"
-        android:fontFamily="@font/mplusrounded1c_bold"
-        android:text="@string/login"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
