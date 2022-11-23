@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:job_list="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/job_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    job_list:cardCornerRadius="4dp"
+    tools:context=".ListJobActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/img_item_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            job_list:layout_constraintBottom_toBottomOf="parent"
+            job_list:layout_constraintStart_toStartOf="parent"
+            job_list:layout_constraintTop_toTopOf="parent"
+            job_list:srcCompat="@drawable/companypicture"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_item_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_toEndOf="@id/img_item_avatar"
+            android:text="@string/nama_perusahaan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            job_list:layout_constraintEnd_toEndOf="parent"
+            job_list:layout_constraintHorizontal_bias="0.5"
+            job_list:layout_constraintStart_toEndOf="@id/img_item_avatar"
+            job_list:layout_constraintTop_toTopOf="@+id/img_item_avatar" />
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/posisi"
+            job_list:layout_constraintStart_toStartOf="@+id/tv_item_username"
+            job_list:layout_constraintTop_toBottomOf="@+id/tv_item_username" />
+
+        <TextView
+            android:id="@+id/tv_item_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/kriteria_pendukung"
+            job_list:layout_constraintStart_toStartOf="@+id/tv_item_username"
+            job_list:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
