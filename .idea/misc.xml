@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_add_job.xml" value="0.55" />
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_detail.xml" value="0.4" />
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_home_applicant.xml" value="0.264" />
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_home_company.xml" value="0.55" />
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_list_job.xml" value="0.55" />
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_login.xml" value="0.55" />
+        <entry key="..\:/DICODING/FinalProject/SayapRaja/app/src/main/res/layout/activity_register.xml" value="0.2478134110787172" />
         <entry key="..\:/DICODING/SayapRaja/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.119" />
         <entry key="..\:/DICODING/SayapRaja/app/src/main/res/drawable/inputbg.xml" value="0.442" />
         <entry key="..\:/DICODING/SayapRaja/app/src/main/res/drawable/roundedbutton.xml" value="0.313" />

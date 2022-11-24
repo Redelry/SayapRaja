@@ -15,6 +15,7 @@ class LoginRepository {
 
     val username : LiveData<String> = client.username
     val password : LiveData<String> = client.password
+    val role : LiveData<String> = client.role
     val msg : LiveData<String> = client.msg
 
     fun login(loginModel: LoginModel,id: String){

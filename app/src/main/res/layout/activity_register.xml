@@ -63,49 +63,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-
-                    android:hint="@string/masukkan_password"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/username4" />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username4"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-
-                    android:hint="@string/masukkan_username"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/username3" />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username3"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-
-                    android:hint="@string/masukkan_tanggal_lahir"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/username2" />
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username2"
+                    android:id="@+id/fullname"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="36dp"
@@ -118,6 +76,55 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/instruction" />
 
+
+
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/birth"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+
+                    android:hint="@string/masukkan_tanggal_lahir"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullname" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+
+                    android:hint="@string/masukkan_nomor_telepon"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/birth" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username"
+                    android:layout_width="325dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/inputbg"
+                    android:elevation="20dp"
+
+                    android:hint="@string/masukkan_username"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+
+
+
+
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="325dp"
@@ -125,14 +132,28 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
-                    android:hint="@string/masukkan_ulang_password"
+                    android:inputType="textPassword"
+                    android:hint="@string/masukkan_password"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/username" />
+                    app:layout_constraintTop_toBottomOf="@+id/username" />
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/password_retype"-->
+<!--                    android:layout_width="325dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="@drawable/inputbg"-->
+<!--                    android:elevation="20dp"-->
+<!--                    android:hint="@string/masukkan_ulang_password"-->
+<!--                    android:textAlignment="center"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/password" />-->
 
                 <Button
-                    android:id="@+id/btn_login"
+                    android:id="@+id/btn_register"
                     android:layout_width="146dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="24dp"
@@ -141,7 +162,7 @@
                     android:background="@drawable/roundedbutton"
                     android:elevation="20dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
-                    android:text="@string/login"
+                    android:text = "@string/register"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.471"
@@ -161,7 +182,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.513"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btn_login"
+                    app:layout_constraintTop_toBottomOf="@id/btn_register"
                     app:layout_constraintVertical_bias="0.055" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

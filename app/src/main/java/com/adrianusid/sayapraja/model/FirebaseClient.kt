@@ -14,16 +14,20 @@ class FirebaseClient {
     private val ref = DatabaseReference.getDbRef()
 
     val id = ref.push().key
+    private val _isSuccess = MutableLiveData<Boolean>()
+    val isSuccess : LiveData<Boolean> = _isSuccess
 
     fun register(userModel: UserModel, context: Context) {
     val userRef = ref.child("user")
         if (id != null) {
            userRef.child(id).setValue(userModel).addOnCompleteListener {
+               _isSuccess.value = true
                 Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
             }
 
 
         }
+        Log.e("WARZONEKNTL","REG ERROR")
 
     }
 
@@ -36,6 +40,8 @@ class FirebaseClient {
     private val _message = MutableLiveData<String>()
     val msg: LiveData<String> = _message
 
+    private val _role = MutableLiveData<String>()
+    val role : LiveData<String> = _role
 
     fun login(loginModel: LoginModel, id: String) {
 
@@ -54,6 +60,11 @@ class FirebaseClient {
                         _password.postValue(
                             snapshot.child(id).child("password").getValue(String::class.java)
                         )
+
+                        _role.postValue(
+                            snapshot.child(id).child("role").getValue(String::class.java)
+                        )
+
                     } else {
                         _message.postValue("snapshot is not exists")
                     }
@@ -68,4 +79,6 @@ class FirebaseClient {
 
 
     }
+
+
 }

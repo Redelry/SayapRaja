@@ -6,6 +6,7 @@
     <string name="silakan_masukan_data_diri_anda">Silakan Masukan Data Diri Anda</string>
     <string name="silakan_buat_lowongan">Mau buat lowongan pekerjaan apa di hari ini?</string>
     <string name="login">Login</string>
+    <string name="register">Register</string>
     <string name="buat_lowongan">Buat Lowongan</string>
     <string name="search">Search</string>
     <string name="menu_1">Menu 1</string>
@@ -30,4 +31,5 @@
     <string name="masukkan_nama_lengkap">Masukkan Nama Lengkap</string>
     <string name="masukkan_ulang_password">Masukkan Ulang Password</string>
     <string name="belum_punya_akun_silakan_klik_disini">Belum Punya Akun? Silakan Klik Disini</string>
+    <string name="masukkan_nomor_telepon">Masukkan Nomor Telepon</string>
 </resources>

@@ -83,8 +83,16 @@ class LoginActivity : AppCompatActivity() {
                             ).show()
 
                             else -> {
-                                startActivity(Intent(this, RegisterActivity::class.java))
-                                finish()
+                                loginViewModel.role.observe(this){
+                                    if(it == "user"){
+                                        startActivity(Intent(this, HomeApplicantActivity::class.java))
+                                        finish()
+                                    } else {
+                                        startActivity(Intent(this, HomeCompanyActivity::class.java))
+                                        finish()
+                                    }
+                                }
+
                             }
                         }
 
