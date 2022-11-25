@@ -8,6 +8,7 @@
     <color name="blue">#004CE8</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#80FFFFFF</color>
     <attr name="mplusroundedRegular" format="color" />
     <attr name="mplusroundedMedium" format="color" />
     <attr name="mplusroundedBold" format="color" />
