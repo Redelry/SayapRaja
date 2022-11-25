@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -17,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/ImageView"
-                android:layout_width="282dp"
-                android:layout_height="168dp"
+                android:layout_width="390dp"
+                android:layout_height="305dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +28,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/formLogin"
-                android:layout_width="407dp"
-                android:layout_height="531dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/mplusrounded1c_medium"
-                    android:text="@string/silakan_masukan_data_diri_anda"
+                    android:text="@string/silakan_masukan_username_dan_password_anda"
                     android:textColor="?attr/mplusroundedMedium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -63,127 +63,68 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fullname"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="36dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-                    android:hint="@string/masukkan_nama_lengkap"
-
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/instruction" />
-
-
-
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/birth"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-
-                    android:hint="@string/masukkan_tanggal_lahir"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fullname" />
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phone"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-
-                    android:hint="@string/masukkan_nomor_telepon"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/birth" />
-                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
-
+                    android:fontFamily="@font/lato_medium"
+                    android:paddingStart="20dp"
+                    android:textSize="14sp"
                     android:hint="@string/masukkan_username"
-                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/phone" />
-
-
-
-
+                    app:layout_constraintTop_toBottomOf="@id/instruction" />
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
+                    android:fontFamily="@font/lato_medium"
+                    android:paddingStart="20dp"
+                    android:textSize="14sp"
                     android:elevation="20dp"
                     android:inputType="textPassword"
                     android:hint="@string/masukkan_password"
-                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/username" />
+                    app:layout_constraintTop_toBottomOf="@id/username" />
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:id="@+id/password_retype"-->
-<!--                    android:layout_width="325dp"-->
-<!--                    android:layout_height="50dp"-->
-<!--                    android:layout_marginTop="8dp"-->
-<!--                    android:background="@drawable/inputbg"-->
-<!--                    android:elevation="20dp"-->
-<!--                    android:hint="@string/masukkan_ulang_password"-->
-<!--                    android:textAlignment="center"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toBottomOf="@id/password" />-->
 
                 <Button
-                    android:id="@+id/btn_register"
+                    android:id="@+id/btn_login"
                     android:layout_width="146dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="12dp"
                     android:background="@drawable/roundedbutton"
                     android:elevation="20dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
-                    android:text = "@string/register"
+                    android:text="@string/login"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.471"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/password" />
+
 
                 <TextView
                     android:id="@+id/reg_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="32dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
                     android:text="@string/belum_punya_akun_silakan_klik_disini"
                     android:textColor="?attr/mplusroundedBold"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.513"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/btn_register"
-                    app:layout_constraintVertical_bias="0.055" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -192,5 +133,6 @@
 
 
     </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

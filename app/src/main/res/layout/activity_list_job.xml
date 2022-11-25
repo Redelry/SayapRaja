@@ -1,68 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:job_list="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/job_list"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp"
-    job_list:cardCornerRadius="4dp"
+    android:layout_height="match_parent"
     tools:context=".ListJobActivity">
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:layout_margin="20dp"
+        android:background="@drawable/searchviewbg"
+        android:iconifiedByDefault="false"
+        android:padding="3dp"
+        android:queryBackground="@android:color/transparent"
+        android:queryHint="@string/cari_lowongan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rv_list_job"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/img_item_avatar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            job_list:layout_constraintBottom_toBottomOf="parent"
-            job_list:layout_constraintStart_toStartOf="parent"
-            job_list:layout_constraintTop_toTopOf="parent"
-            job_list:srcCompat="@drawable/companypicture"
-            tools:src="@tools:sample/avatars" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list_job"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"
+        tools:listitem="@layout/item_job" />
 
-        <TextView
-            android:id="@+id/tv_item_username"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_toEndOf="@id/img_item_avatar"
-            android:text="@string/nama_perusahaan"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            job_list:layout_constraintEnd_toEndOf="parent"
-            job_list:layout_constraintHorizontal_bias="0.5"
-            job_list:layout_constraintStart_toEndOf="@id/img_item_avatar"
-            job_list:layout_constraintTop_toTopOf="@+id/img_item_avatar" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"/>
 
-        <TextView
-            android:id="@+id/tv_item_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/posisi"
-            job_list:layout_constraintStart_toStartOf="@+id/tv_item_username"
-            job_list:layout_constraintTop_toBottomOf="@+id/tv_item_username" />
-
-        <TextView
-            android:id="@+id/tv_item_name2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/kriteria_pendukung"
-            job_list:layout_constraintStart_toStartOf="@+id/tv_item_username"
-            job_list:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

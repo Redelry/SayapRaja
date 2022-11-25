@@ -17,6 +17,17 @@
         <entry key="..\:/DICODING/SayapRaja/app/src/main/res/layout/activity_main.xml" value="0.296875" />
         <entry key="..\:/DICODING/SayapRaja/app/src/main/res/layout/activity_register.xml" value="0.55" />
         <entry key="..\:/DICODING/SayapRaja/app/src/main/res/layout/activity_splash.xml" value="0.55" />
+        <entry key="app/src/main/res/drawable-v24/searchviewbg.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/inputbg.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/inputbg2.xml" value="0.2385" />
+        <entry key="app/src/main/res/layout/activity_add_job.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_home_applicant.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_home_company.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_list_job.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/item_job.xml" value="0.2947916666666667" />
       </map>
     </option>
   </component>
