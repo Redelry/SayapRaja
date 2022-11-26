@@ -10,8 +10,7 @@
         android:id="@+id/cardView"
         android:layout_width="216dp"
         android:layout_height="146dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            tools:src="@drawable/assets1" />
+            android:src="@drawable/assets3" />
     </androidx.cardview.widget.CardView>
 
     <TextView

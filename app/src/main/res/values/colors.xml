@@ -9,6 +9,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#80FFFFFF</color>
+    <color name="downy">#71C9CE</color>
+    <color name="yellow_500">#F8B400</color>
+    <color name="yellow_700_pirate_gold">#B88a04</color>
+    <color name="gray_200_nickel">#BEBDBA</color>
+
     <attr name="mplusroundedRegular" format="color" />
     <attr name="mplusroundedMedium" format="color" />
     <attr name="mplusroundedBold" format="color" />

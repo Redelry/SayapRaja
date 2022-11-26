@@ -29,32 +29,19 @@
         app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
     <TextView
-        android:id="@+id/welcome"
+        android:id="@+id/instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/mplusrounded1c_bold"
-        android:text="@string/selamat_datang_di_sayap_raja"
+        android:text="@string/mau_cari_pekerjaan_apa_hari_ini"
         android:textAlignment="viewStart"
         android:textColor="?attr/mplusroundedBold"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/instruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
-
-    <TextView
-        android:id="@+id/instruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/mplusrounded1c_medium"
-        android:text="@string/silakan_buat_lowongan"
-        android:textColor="?attr/mplusroundedMedium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -87,7 +74,7 @@
                     <ImageView
                         android:layout_width="350dp"
                         android:layout_height="200dp"
-                        android:src="@drawable/assets1" />
+                        android:src="@drawable/assets2" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -108,7 +95,7 @@
                     <ImageView
                         android:layout_width="350dp"
                         android:layout_height="200dp"
-                        android:src="@drawable/assets1" />
+                        android:src="@drawable/assets2" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -129,7 +116,7 @@
                     <ImageView
                         android:layout_width="350dp"
                         android:layout_height="200dp"
-                        android:src="@drawable/assets1" />
+                        android:src="@drawable/assets2" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -150,7 +137,7 @@
                     <ImageView
                         android:layout_width="350dp"
                         android:layout_height="200dp"
-                        android:src="@drawable/assets1" />
+                        android:src="@drawable/assets2" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

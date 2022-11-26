@@ -17,16 +17,19 @@ import com.klinker.android.link_builder.Link
 import com.klinker.android.link_builder.applyLinks
 
 class LoginActivity : AppCompatActivity() {
+
+    private val binding:ActivityLoginBinding by lazy {
+        ActivityLoginBinding.inflate(layoutInflater)
+    }
     private val loginViewModel: LoginViewModel by viewModels()
     private lateinit var userPrefViewModel: UserPrefViewModel
-    private lateinit var binding: ActivityLoginBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportActionBar?.hide()
-        binding = ActivityLoginBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
 
         userPrefViewModel = obtainPrefUserPrefViewModel(this)
 
@@ -38,6 +41,17 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         linkSetup()
+
+        testIntent()
+    }
+
+    private fun testIntent() {
+        val intentListJob = Link("")
+            .setOnClickListener {
+                startActivity(Intent(this, ListJobActivity::class.java))
+            }
+        val intent = binding.testIntent
+        intent.applyLinks(intentListJob)
     }
 
     private fun linkSetup() {

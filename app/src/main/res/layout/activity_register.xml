@@ -17,25 +17,25 @@
 
             <ImageView
                 android:id="@+id/ImageView"
-                android:layout_width="282dp"
-                android:layout_height="168dp"
+                android:layout_height="100dp"
+                android:layout_width="100dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/apps_logo"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/logo" />
+                tools:ignore="ContentDescription" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/formLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/formRegister"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ImageView"
-                app:layout_constraintVertical_bias="0.0">
-
+                app:layout_constraintTop_toBottomOf="@id/ImageView">
 
                 <TextView
                     android:id="@+id/welcome"
@@ -62,113 +62,123 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/welcome" />
 
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fullname"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
                     android:fontFamily="@font/lato_medium"
-                    android:hint="@string/masukkan_nama_lengkap"
                     android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:hint="@string/masukkan_nama_lengkap"
                     android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/instruction" />
-
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/instruction"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/birth"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
                     android:fontFamily="@font/lato_medium"
-                    android:hint="@string/masukkan_tanggal_lahir"
                     android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
                     android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="@string/masukkan_tanggal_lahir"
+                    android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fullname" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullname"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
                     android:fontFamily="@font/lato_medium"
-                    android:hint="@string/masukkan_nomor_telepon"
                     android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
                     android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:hint="@string/masukkan_nomor_telepon"
+                    android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/birth" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/birth"/>
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
                     android:elevation="20dp"
                     android:fontFamily="@font/lato_medium"
-                    android:hint="@string/masukkan_username"
                     android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
                     android:textSize="14sp"
+                    android:hint="@string/masukkan_username"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/phone" />
+                    app:layout_constraintTop_toBottomOf="@id/phone" />
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
-                    android:elevation="20dp"
                     android:fontFamily="@font/lato_medium"
-                    android:hint="@string/masukkan_password"
-                    android:inputType="textPassword"
                     android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
                     android:textSize="14sp"
+                    android:elevation="20dp"
+                    android:inputType="textPassword"
+                    android:hint="@string/masukkan_password"
+                    android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/username" />
+                    app:layout_constraintTop_toBottomOf="@id/username" />
+
 
                 <Button
                     android:id="@+id/btn_register"
                     android:layout_width="146dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="12dp"
                     android:background="@drawable/roundedbutton"
                     android:elevation="20dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
                     android:text="@string/daftar"
                     android:textSize="16sp"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.471"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/password" />
 
+
                 <TextView
-                    android:id="@+id/reg_link"
+                    android:id="@+id/login_link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/mplusrounded1c_bold"
-                    android:text="@string/belum_punya_akun_silakan_klik_disini"
+                    android:text="@string/sudah_punya_akun_silahkan_klik_disini"
                     android:textColor="?attr/mplusroundedBold"
                     android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.513"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btn_register" />
 
