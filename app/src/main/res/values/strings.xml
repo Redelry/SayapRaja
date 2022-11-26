@@ -31,6 +31,7 @@
     <string name="masukkan_nama_lengkap">Masukkan Nama Lengkap</string>
     <string name="masukkan_ulang_password">Masukkan Ulang Password</string>
     <string name="belum_punya_akun_silakan_klik_disini">Belum Punya Akun? Silakan Klik Disini</string>
+    <string name="sudah_punya_akun_silahkan_klik_disini">Sudah Punya Akun? Silahkan Klik Disini</string>
     <string name="masukkan_nomor_telepon">Masukkan Nomor Telepon</string>
     <string name="cari_lowongan">Cari Lowongan Pekerjaan</string>
     <string name="perusahaan">PT. CAHAYA ILAHI</string>
@@ -38,6 +39,4 @@
     <string name="date_add">20 Januari 2022</string>
     <string name="upload">UPLOAD</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin vehicula mauris ut efficitur. Nam id ultricies elit. Curabitur pretium, augue nec ultrices eleifend, massa augue lacinia nisl, dignissim mollis sem ligula lacinia risus. Pellentesque vel diam felis. Sed eros tellus, finibus eget varius in, condimentum egestas magna.</string>
-
-
 </resources>

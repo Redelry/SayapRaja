@@ -18,16 +18,17 @@ import com.klinker.android.link_builder.applyLinks
 
 class RegisterActivity : AppCompatActivity() {
 
+    private val binding: ActivityRegisterBinding by lazy {
+        ActivityRegisterBinding.inflate(layoutInflater)
+    }
     private val registerViewModel: RegisterViewModel by viewModels()
     private lateinit var userPrefViewModel: UserPrefViewModel
-    private lateinit var binding: ActivityRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportActionBar?.hide()
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
 
         userPrefViewModel = obtainPrefUserPrefViewModel(this)
 
@@ -80,7 +81,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun linkSetup() {
-        val registerLink = Link("Disini")
+        val loginLink = Link("Disini")
             .setTextColor(Color.parseColor("#004CE8"))
             .setHighlightAlpha(.4f)
             .setUnderlined(false)
@@ -88,8 +89,8 @@ class RegisterActivity : AppCompatActivity() {
             .setOnClickListener {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
-        val register = findViewById<TextView>(R.id.reg_link)
-        register.applyLinks(registerLink)
+        val register = findViewById<TextView>(R.id.login_link)
+        register.applyLinks(loginLink)
     }
 
     private fun obtainPrefUserPrefViewModel(activity: AppCompatActivity): UserPrefViewModel {

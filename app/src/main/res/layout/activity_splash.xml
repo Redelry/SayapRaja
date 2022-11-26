@@ -8,9 +8,10 @@
 
     <ImageView
         android:id="@+id/splash_screen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/splash_screen"
+        android:src="@drawable/apps_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
