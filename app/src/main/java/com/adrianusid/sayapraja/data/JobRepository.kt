@@ -19,11 +19,11 @@ class JobRepository {
 
     val isSuccess: LiveData<Boolean> = client.isSuccess
 
-    fun editJob(position: String, description: String, requirement: String, id: String){
-        executorService.execute { client.editJob(position,description, requirement, id) }
+    fun editJob(position: String, description: String, requirement: String,date: String, idCorp: String,idJob: String){
+        executorService.execute { client.editJob(position,description, requirement,date, idCorp,idJob) }
     }
 
-    fun deleteJob(id: String){
-        executorService.execute { client.deleteJob(id) }
+    fun deleteJob(idJob: String,idCorp: String){
+        executorService.execute { client.deleteJob(idJob,idCorp) }
     }
 }

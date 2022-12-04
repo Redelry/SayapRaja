@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditJobActivity">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/requirement_input"
+        android:layout_width="320dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/inputbg2"
+        android:elevation="20dp"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/masukkan_syarat"
+        android:paddingStart="20dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requirement" />
+
+    <TextView
+        android:id="@+id/requirement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/syarat"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_input" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/description_input"
+        android:layout_width="320dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/inputbg2"
+        android:elevation="20dp"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/masukkan_deskripsi"
+        android:paddingStart="20dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/deskripsi_pekerjaan"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/position_input" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/position_input"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/inputbg2"
+        android:elevation="20dp"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/masukkan_posisi"
+        android:paddingStart="20dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/position" />
+
+    <TextView
+        android:id="@+id/position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/posisi_lowongan"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="190dp"
+        android:layout_height="49dp"
+        android:background="@drawable/roundedbutton"
+        android:elevation="20dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/mplusrounded1c_bold"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requirement_input" />
+
+    <Button
+        android:id="@+id/cancel"
+
+        android:layout_width="190dp"
+        android:layout_height="49dp"
+        android:background="@drawable/roundedbutton"
+        android:elevation="20dp"
+        android:fontFamily="@font/mplusrounded1c_bold"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/requirement_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_save"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

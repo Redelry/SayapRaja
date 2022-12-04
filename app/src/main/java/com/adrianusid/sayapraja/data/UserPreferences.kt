@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.adrianusid.sayapraja.model.UserModel
 
 class UserPreferences (context: Context){
 
@@ -30,11 +31,10 @@ class UserPreferences (context: Context){
         return id
 
     }
-
-    fun saveLogin(login : Boolean){
-        editor?.putBoolean("login",login)
-        editor?.commit()
-    }
+//
+//    fun saveLogin(role: String) :  LiveData<UserModel> {
+//        editor?.putString()
+//    }
 
     fun getLogin(): LiveData<Boolean>{
         login.value = sharedPreferences?.getBoolean("login", false)

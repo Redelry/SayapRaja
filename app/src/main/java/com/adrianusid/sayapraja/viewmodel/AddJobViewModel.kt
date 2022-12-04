@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.adrianusid.sayapraja.data.AddJobRepository
 import com.adrianusid.sayapraja.model.AddJobModel
-import com.adrianusid.sayapraja.model.UserModel
 
 class AddJobViewModel : ViewModel() {
     private val repo: AddJobRepository = AddJobRepository()

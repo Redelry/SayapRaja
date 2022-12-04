@@ -1,7 +1,6 @@
 package com.adrianusid.sayapraja
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
@@ -26,7 +25,6 @@ class LoginActivity : AppCompatActivity() {
     private val binding: ActivityLoginBinding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
-    private var editor : SharedPreferences.Editor ? = null
 
     private val loginViewModel: LoginViewModel by viewModels()
     private lateinit var userPrefViewModel: UserPrefViewModel
@@ -42,13 +40,39 @@ class LoginActivity : AppCompatActivity() {
         userPrefViewModel = obtainPrefUserPrefViewModel(this)
 
         corpPrefViewModel = obtainPrefCorpPrefViewModel(this)
+        val sharedPref = this.getSharedPreferences("pref", 0)
+        loginViewModel.user.observe(this) { user ->
+            sharedPref.edit().putBoolean("login",true).apply()
+            sharedPref.edit().putString("role",user.role).apply()
+            if (user.role == "user") {
 
 
+                userPrefViewModel.setId(user.userId)
+                startActivity(
+                    Intent(
+                        this,
+                        HomeApplicantActivity::class.java
+                    )
+                )
+                finish()
+            } else {
 
 
-            binding.btnLogin.setOnClickListener {
-                login( )
+                corpPrefViewModel.setId(user.userId)
+                startActivity(
+                    Intent(
+                        this,
+                        HomeCompanyActivity::class.java
+                    )
+                )
+                finish()
             }
+        }
+
+
+        binding.btnLogin.setOnClickListener {
+            login()
+        }
 
 
 
@@ -95,7 +119,6 @@ class LoginActivity : AppCompatActivity() {
             binding.password.error = "Password minimal 6 karakter"
         } else {
 
-//            id = auth.currentUser!!.uid
 
             loginFirebase(email, password)
 
@@ -123,41 +146,14 @@ class LoginActivity : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) {
-                val user : FirebaseUser? = auth.currentUser
-                val userId = user?.uid ?: ""
+
                 if (it.isSuccessful) {
+                    val user: FirebaseUser? = auth.currentUser
+                    val userId = user?.uid ?: ""
                     loginViewModel.login(userId)
 
-                    Log.d("ID",userId)
-                    loginViewModel.role.observe(this) { role ->
-                        if (role == "user") {
-                            userPrefViewModel.saveLogin(true)
-//                            sharedPreferences?.edit(commit = true) {
-//                                putString("userId",userId)
-//                            }
-                            userPrefViewModel.setId(userId)
-                           startActivity(
-                                Intent(
-                                    this,
-                                    HomeApplicantActivity::class.java
-                                )
-                            )
-                            finish()
-                        } else {
-                            corpPrefViewModel.saveLogin(true)
-//                            sharedPreferences?.edit(commit = true) {
-//                                putString("userId",userId)
-//                            }
-                            corpPrefViewModel.setId(userId)
-                            startActivity(
-                                Intent(
-                                    this,
-                                    HomeCompanyActivity::class.java
-                                )
-                            )
-                            finish()
-                        }
-                    }
+                    Log.d("ID", userId)
+
 
 
                     Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
@@ -169,9 +165,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
 
-
     }
-
 
 
 }

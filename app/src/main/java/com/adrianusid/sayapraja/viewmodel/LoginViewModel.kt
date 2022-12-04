@@ -13,7 +13,7 @@ class LoginViewModel : ViewModel(){
     val password : LiveData<String> = repo.password
     val role : LiveData<String> = repo.role
     val msg : LiveData<String> = repo.msg
-
+    val user = repo.user
 
     fun login(userId: String){
         repo.login(userId)

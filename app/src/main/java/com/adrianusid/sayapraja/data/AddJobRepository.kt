@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import com.adrianusid.sayapraja.model.AddJobModel
 import com.adrianusid.sayapraja.model.FirebaseClient
-import com.adrianusid.sayapraja.model.UserModel
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -14,21 +13,18 @@ class AddJobRepository {
 
     private val executorService: ExecutorService = Executors.newSingleThreadExecutor()
 
-    val isSuccess : LiveData<Boolean> = client.isSuccess
+    val isSuccess: LiveData<Boolean> = client.isSuccess
 
 
-
-    fun addJob(addJobModel: AddJobModel, context: Context,idCorp:String){
-
+    fun addJob(addJobModel: AddJobModel, context: Context, idCorp: String) {
 
 
         executorService.execute {
-            client.addJob(addJobModel,context,idCorp)
+            client.addJob(addJobModel, context, idCorp)
         }
 
 
     }
-
 
 
     fun getJobId() = client.idJob

@@ -19,11 +19,11 @@ class UserPreferencesRepository(application: Application) {
 
     fun getId() : LiveData<String> = pref.getId()
 
-    fun saveLogin(login : Boolean){
-        executorService.execute {
-            pref.saveLogin(login)
-        }
-    }
+//    fun saveLogin(login : Boolean){
+//        executorService.execute {
+//            pref.saveLogin(login)
+//        }
+//    }
 
     fun getLogin(): LiveData<Boolean> = pref.getLogin()
 

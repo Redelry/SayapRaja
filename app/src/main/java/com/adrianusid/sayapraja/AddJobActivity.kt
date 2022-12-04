@@ -41,7 +41,7 @@ class AddJobActivity : AppCompatActivity() {
 
         corpPrefViewModel.getId().observe(this) {
             idCorp = it
-            Log.d("IDCORP",it)
+            Log.d("IDCORP", it)
             corpNameViewModel.getCorpName(it)
 
         }
@@ -60,7 +60,6 @@ class AddJobActivity : AppCompatActivity() {
             }
 
         }
-
 
 
     }

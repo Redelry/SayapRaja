@@ -12,19 +12,17 @@ class RegisterRepository {
 
     private val executorService: ExecutorService = Executors.newSingleThreadExecutor()
 
-    val isSuccess : LiveData<Boolean> = client.isSuccess
+    val isSuccess: LiveData<Boolean> = client.isSuccess
 
-    fun register(userModel: UserModel, context: Context){
-
+    fun register(userModel: UserModel, userId: String, context: Context) {
 
 
         executorService.execute {
-            client.register(userModel,context)
+            client.register(userModel, userId, context)
         }
 
 
     }
 
-    fun getUserId() = client.userId
 
 }

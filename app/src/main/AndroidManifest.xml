@@ -14,10 +14,12 @@
         android:theme="@style/Theme.SayapRaja"
         tools:targetApi="31">
         <activity
+            android:name=".EditJobActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeApplicantActivity"
             android:exported="false"
-            android:launchMode="singleTask"
-            >
+            android:launchMode="singleTask">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -25,8 +27,7 @@
         <activity
             android:name=".HomeCompanyActivity"
             android:exported="false"
-            android:launchMode="singleTask"
-            >
+            android:launchMode="singleTask">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -67,8 +68,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:launchMode="singleTask">
-        </activity>
+            android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>

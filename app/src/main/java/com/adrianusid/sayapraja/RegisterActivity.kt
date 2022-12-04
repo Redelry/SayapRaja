@@ -3,7 +3,6 @@ package com.adrianusid.sayapraja
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.widget.TextView
 import android.widget.Toast
@@ -149,7 +148,7 @@ class RegisterActivity : AppCompatActivity() {
         registerViewModel.register(
             UserModel(
                 userId, name, phone, email, password, "user",
-            ), this
+            ), userId, this
         )
     }
 }

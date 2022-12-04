@@ -6,25 +6,17 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrianusid.sayapraja.data.DatabaseReference
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
 class FirebaseClient {
     private val ref = DatabaseReference.getDbRef()
-    private val auth = FirebaseAuth.getInstance()
-    val idUser = ref.push().key
-    private val user: FirebaseUser? = auth.currentUser
-    val userId = user?.uid ?: ""
-//    val idJob = user?.uid ?: ""
-
-        val idJob = ref.push().key
+    val idJob = ref.push().key
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean> = _isSuccess
 
-    fun register(userModel: UserModel, context: Context) {
+    fun register(userModel: UserModel, userId: String,context: Context) {
 
 
         val userRef = ref.child("user")
@@ -53,6 +45,9 @@ class FirebaseClient {
     private val _username = MutableLiveData<String>()
     val username: LiveData<String> = _username
 
+    private val _user = MutableLiveData<UserModel>()
+    val users: LiveData<UserModel> = _user
+
     private val _password = MutableLiveData<String>()
     val password: LiveData<String> = _password
 
@@ -77,17 +72,22 @@ class FirebaseClient {
 
         query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+
                 if (snapshot.exists()) {
-                    _username.postValue(
-                        snapshot.child(userid).child("username").getValue(String::class.java)
-                    )
-                    _password.postValue(
-                        snapshot.child(userid).child("password").getValue(String::class.java)
+                    val user = UserModel(
+                        userId = userid,
+                        email = snapshot.child(userid).child("email").getValue(String::class.java)
+                            .toString(),
+                        role = snapshot.child(userid).child("role").getValue(String::class.java)
+                            .toString(),
+                        password = snapshot.child(userid).child("password")
+                            .getValue(String::class.java).toString()
                     )
 
-                    _role.postValue(
-                        snapshot.child(userid).child("role").getValue(String::class.java)
+                    _user.postValue(
+                        user
                     )
+
 
                 } else {
                     _message.postValue("snapshot is not exists")
@@ -162,44 +162,22 @@ class FirebaseClient {
         })
     }
 
-    fun editJob(position: String, description: String, requirement: String, idCorp: String) {
-        ref.child("JobList").orderByChild("idCorp").equalTo(idCorp)
-//        ref.child("JobList").child("idCorp").orderByChild("idJob").equalTo(idJob).child("description").setValue(description)
-//        ref.child("JobList").child("idCorp").orderByChild("idJob").equalTo(idJob).child("requirement").setValue(requirement)
+    fun editJob(position: String, description: String, requirement: String, date: String, idCorp: String, idJob: String) {
+
+        val jobRef = ref.child("JobList").child(idCorp)
+        jobRef.child(idJob).child("position").setValue(position)
+        jobRef.child(idJob).child("description").setValue(description)
+        jobRef.child(idJob).child("requirement").setValue(requirement)
+        jobRef.child(idJob).child("date").setValue(date)
     }
 
-    fun deleteJob( idCorp: String) {
+    fun deleteJob(idJob: String,idCorp: String) {
         val userRef = ref.child("JobList").child(idCorp)
 
-        userRef.child(idJob.toString()).setValue(null).addOnCompleteListener {
+        userRef.child(idJob).setValue(null).addOnCompleteListener {
             _isSuccess.value = true
         }
-//    fun upData(userModel: UserModel,context: Context){
-//
-//
-//            auth = FirebaseAuth.getInstance()
-//
-//        val user : FirebaseUser? = auth.currentUser
-//        val userId = user!!.uid
-//
-//        val userData : HashMap<String,String> = HashMap()
-//
-//        userData["id"] = userId
-//        userData["name"] = name
-//        userData["phone"] = phone
-//        userData["email"] = email
-//        userData["password"] = password
-//
-//        ref.child(userId).setValue(userData).addOnCompleteListener{
-//            if(it.isSuccessful){
-//
-//                    _isSuccess.value = true
-//                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-//                }
-//        }
-//
-//
-//    }
+
 
 
     }

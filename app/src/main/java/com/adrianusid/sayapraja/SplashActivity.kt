@@ -2,15 +2,14 @@ package com.adrianusid.sayapraja
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.adrianusid.sayapraja.databinding.ActivitySplashBinding
 import com.adrianusid.sayapraja.viewmodel.CorpPrefViewModel
-import com.adrianusid.sayapraja.viewmodel.LoginViewModel
 import com.adrianusid.sayapraja.viewmodel.UserPrefViewModel
 import com.adrianusid.sayapraja.viewmodel.ViewModelFactory
 import com.bumptech.glide.Glide
@@ -19,10 +18,8 @@ import com.bumptech.glide.Glide
 class SplashActivity : AppCompatActivity() {
 
 
-    private val loginViewModel: LoginViewModel by viewModels()
     private lateinit var userPrefViewModel: UserPrefViewModel
     private lateinit var corpPrefViewModel: CorpPrefViewModel
-private val id : String? = null
     private var role : String? = null
     private var login: Boolean = true
     private val binding: ActivitySplashBinding by lazy {
@@ -32,7 +29,7 @@ private val id : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        val sharedPreferences : SharedPreferences = this.getSharedPreferences("pref", 0)
         supportActionBar?.hide()
 
         userPrefViewModel = obtainPrefUserPrefViewModel(this)
@@ -46,13 +43,8 @@ private val id : String? = null
             .into(image)
         Handler(Looper.getMainLooper()).postDelayed({
 
-            loginViewModel.role.observe(this) {role =it
-
-            }
-            userPrefViewModel.getLogin().observe(this){ login = it
-
-            }
-
+            role =  sharedPreferences.getString("role","")
+            login  =   sharedPreferences.getBoolean("login",false)
             if (login ){
                 if (role == "user"){
                     startActivity(Intent(this,HomeApplicantActivity::class.java))
@@ -65,6 +57,8 @@ private val id : String? = null
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
+
+
 
 
         }, DELAY_TIME.toLong())

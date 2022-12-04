@@ -19,14 +19,14 @@ class HomeApplicantActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        val sharedPref = this.getSharedPreferences("pref", 0)
         supportActionBar?.hide()
 
         userPrefViewModel = obtainPrefUserPrefViewModel(this)
 
         binding.fabLogout.setOnClickListener {
             userPrefViewModel.setId("")
-            userPrefViewModel.saveLogin(false)
+            sharedPref.edit().putBoolean("login",false).apply()
             startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }
