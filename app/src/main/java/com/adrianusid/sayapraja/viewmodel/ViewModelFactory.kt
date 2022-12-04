@@ -9,10 +9,23 @@ class ViewModelFactory private constructor(private val application: Application)
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if(modelClass.isAssignableFrom(UserPrefViewModel::class.java)){
-            return UserPrefViewModel(application) as T
+//        if(modelClass.isAssignableFrom(UserPrefViewModel::class.java)){
+//            return UserPrefViewModel(application) as T
+//        }
+
+        return when{
+            modelClass.isAssignableFrom(UserPrefViewModel::class.java) -> {
+                UserPrefViewModel(application) as T
+            }
+
+            modelClass.isAssignableFrom(CorpPrefViewModel::class.java) -> {
+                CorpPrefViewModel(application) as T
+
+
+            }
+            else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
-        throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
+
     }
 
 

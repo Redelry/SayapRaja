@@ -13,9 +13,11 @@
     <color name="yellow_500">#F8B400</color>
     <color name="yellow_700_pirate_gold">#B88a04</color>
     <color name="gray_200_nickel">#BEBDBA</color>
+    <color name="material_red">#EC7474</color>
 
     <attr name="mplusroundedRegular" format="color" />
     <attr name="mplusroundedMedium" format="color" />
     <attr name="mplusroundedBold" format="color" />
+    <attr name="inputBg" format="color"/>
     <attr name="bg" format="color" />
 </resources>

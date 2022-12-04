@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/downy</item>
         <item name="colorPrimaryVariant">@color/downy</item>
         <item name="colorOnPrimary">@color/black</item>
+        <item name="inputBg">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/yellow_500</item>
         <item name="colorSecondaryVariant">@color/yellow_700_pirate_gold</item>
@@ -12,6 +13,7 @@
         <item name="mplusroundedBold">@color/black</item>
         <item name="mplusroundedRegular">@color/black</item>
         <item name="mplusroundedMedium">@color/black</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

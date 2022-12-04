@@ -1,57 +1,59 @@
 package com.adrianusid.sayapraja
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.util.Patterns
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.adrianusid.sayapraja.databinding.ActivityLoginBinding
-import com.adrianusid.sayapraja.model.LoginModel
+import com.adrianusid.sayapraja.viewmodel.CorpPrefViewModel
 import com.adrianusid.sayapraja.viewmodel.LoginViewModel
 import com.adrianusid.sayapraja.viewmodel.UserPrefViewModel
 import com.adrianusid.sayapraja.viewmodel.ViewModelFactory
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.klinker.android.link_builder.Link
 import com.klinker.android.link_builder.applyLinks
 
 class LoginActivity : AppCompatActivity() {
 
-    private val binding:ActivityLoginBinding by lazy {
+    private val binding: ActivityLoginBinding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
+    private var editor : SharedPreferences.Editor ? = null
+
     private val loginViewModel: LoginViewModel by viewModels()
     private lateinit var userPrefViewModel: UserPrefViewModel
-
+    private lateinit var corpPrefViewModel: CorpPrefViewModel
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         supportActionBar?.hide()
-
+        auth = FirebaseAuth.getInstance()
         userPrefViewModel = obtainPrefUserPrefViewModel(this)
 
+        corpPrefViewModel = obtainPrefCorpPrefViewModel(this)
 
 
-        userPrefViewModel.getId().observe(this){ id ->
+
+
             binding.btnLogin.setOnClickListener {
-                login(id)
+                login( )
             }
-        }
+
+
+
+
         linkSetup()
-
-        testIntent()
-    }
-
-    private fun testIntent() {
-        val intentListJob = Link("")
-            .setOnClickListener {
-                startActivity(Intent(this, ListJobActivity::class.java))
-            }
-        val intent = binding.testIntent
-        intent.applyLinks(intentListJob)
     }
 
     private fun linkSetup() {
@@ -62,65 +64,43 @@ class LoginActivity : AppCompatActivity() {
             .setBold(false)
             .setOnClickListener {
                 startActivity(Intent(this, RegisterActivity::class.java))
+                finish()
             }
         val register = findViewById<TextView>(R.id.reg_link)
         register.applyLinks(registerLink)
     }
 
-    private fun login(id: String) {
-        val username = binding.username.text.toString()
+    //    private fun login(id: String) {
+    private fun login() {
+        val email = binding.email.text.toString()
         val password = binding.password.text.toString()
 
-        when {
-            username.isEmpty() -> binding.username.error = "Please Insert Your Username"
 
-            password.isEmpty() -> binding.password.error = "Please Insert Your Password"
-
-            else -> {
-                loginViewModel.login(LoginModel(username, password), id)
-
-
-                loginViewModel.username.observe(this) {
-
-                    loginViewModel.password.observe(this) { pass ->
-                        when {
-                            username != it -> Toast.makeText(
-                                this,
-                                "Check Your Username Again",
-                                Toast.LENGTH_SHORT
-                            ).show()
-
-                            password !=  pass-> Toast.makeText(
-                                this,
-                                "Check Your Password Again",
-                                Toast.LENGTH_SHORT
-                            ).show()
-
-                            else -> {
-                                loginViewModel.role.observe(this){
-                                    if(it == "user"){
-                                        startActivity(Intent(this, HomeApplicantActivity::class.java))
-                                        finish()
-                                    } else {
-                                        startActivity(Intent(this, HomeCompanyActivity::class.java))
-                                        finish()
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-
-                }
-
-
-                loginViewModel.msg.observe(this) {
-                    Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-                }
-
-            }
+        //validasi Email
+        if (email.isEmpty()) {
+            binding.email.error = "Tolong isi Email Anda !"
         }
+
+        //email tidak sesuai
+        else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.email.error = "Email tidak valid !"
+        }
+        //validasi password
+        else if (password.isEmpty()) {
+            binding.password.error = "Tolong isi PAssword Anda !"
+        }
+
+        //validasi panjag password
+        else if (password.length < 6) {
+            binding.password.error = "Password minimal 6 karakter"
+        } else {
+
+//            id = auth.currentUser!!.uid
+
+            loginFirebase(email, password)
+
+        }
+
 
     }
 
@@ -130,5 +110,68 @@ class LoginActivity : AppCompatActivity() {
         return ViewModelProvider(activity, factory)[UserPrefViewModel::class.java]
 
     }
+
+    private fun obtainPrefCorpPrefViewModel(activity: AppCompatActivity): CorpPrefViewModel {
+        val factory = ViewModelFactory.getInstance(activity.application)
+
+        return ViewModelProvider(activity, factory)[CorpPrefViewModel::class.java]
+
+    }
+
+    private fun loginFirebase(email: String, password: String) {
+
+
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) {
+                val user : FirebaseUser? = auth.currentUser
+                val userId = user?.uid ?: ""
+                if (it.isSuccessful) {
+                    loginViewModel.login(userId)
+
+                    Log.d("ID",userId)
+                    loginViewModel.role.observe(this) { role ->
+                        if (role == "user") {
+                            userPrefViewModel.saveLogin(true)
+//                            sharedPreferences?.edit(commit = true) {
+//                                putString("userId",userId)
+//                            }
+                            userPrefViewModel.setId(userId)
+                           startActivity(
+                                Intent(
+                                    this,
+                                    HomeApplicantActivity::class.java
+                                )
+                            )
+                            finish()
+                        } else {
+                            corpPrefViewModel.saveLogin(true)
+//                            sharedPreferences?.edit(commit = true) {
+//                                putString("userId",userId)
+//                            }
+                            corpPrefViewModel.setId(userId)
+                            startActivity(
+                                Intent(
+                                    this,
+                                    HomeCompanyActivity::class.java
+                                )
+                            )
+                            finish()
+                        }
+                    }
+
+
+                    Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
+
+
+                } else {
+                    Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
+
+    }
+
+
 
 }

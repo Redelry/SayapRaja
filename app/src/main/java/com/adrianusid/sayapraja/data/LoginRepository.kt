@@ -1,6 +1,5 @@
 package com.adrianusid.sayapraja.data
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import com.adrianusid.sayapraja.model.FirebaseClient
 import com.adrianusid.sayapraja.model.LoginModel
@@ -18,10 +17,10 @@ class LoginRepository {
     val role : LiveData<String> = client.role
     val msg : LiveData<String> = client.msg
 
-    fun login(loginModel: LoginModel,id: String){
+    fun login(userId: String){
 
         executorService.execute {
-            client.login(loginModel,id)
+            client.login(userId)
 
         }
 

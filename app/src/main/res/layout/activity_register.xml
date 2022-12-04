@@ -80,41 +80,25 @@
                     app:layout_constraintTop_toBottomOf="@+id/instruction"/>
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/birth"
-                    android:layout_width="325dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/inputbg"
-                    android:elevation="20dp"
-                    android:fontFamily="@font/lato_medium"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textSize="14sp"
-                    android:hint="@string/masukkan_tanggal_lahir"
-                    android:textAlignment="center"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fullname"/>
-
-                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
                     android:background="@drawable/inputbg"
+                    android:layout_marginTop="20dp"
                     android:elevation="20dp"
                     android:fontFamily="@font/lato_medium"
+                    android:hint="@string/masukkan_nomor_telepon"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
-                    android:textSize="14sp"
-                    android:hint="@string/masukkan_nomor_telepon"
                     android:textAlignment="center"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/birth"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fullname"
+                    tools:layout_editor_absoluteY="247dp" />
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
+                    android:id="@+id/email"
                     android:layout_width="325dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
@@ -124,7 +108,7 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textSize="14sp"
-                    android:hint="@string/masukkan_username"
+                    android:hint="masukkan Email"
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +131,7 @@
                     android:textAlignment="center"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/username" />
+                    app:layout_constraintTop_toBottomOf="@id/email" />
 
 
                 <Button

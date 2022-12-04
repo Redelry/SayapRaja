@@ -7,7 +7,7 @@
     tools:context=".AddJobActivity">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/requirement2"
+        android:id="@+id/requirement_input"
         android:layout_width="320dp"
         android:layout_height="310dp"
         android:layout_marginTop="8dp"
@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description2" />
+        app:layout_constraintTop_toBottomOf="@+id/description_input" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/description2"
+        android:id="@+id/description_input"
         android:layout_width="320dp"
         android:layout_height="135dp"
         android:layout_marginTop="8dp"
@@ -66,10 +66,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/position2" />
+        app:layout_constraintTop_toBottomOf="@+id/position_input" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/position2"
+        android:id="@+id/position_input"
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_upload"
         android:layout_width="190dp"
         android:layout_height="49dp"
         android:background="@drawable/roundedbutton"
@@ -112,6 +112,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/requirement2" />
+        app:layout_constraintTop_toBottomOf="@+id/requirement_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

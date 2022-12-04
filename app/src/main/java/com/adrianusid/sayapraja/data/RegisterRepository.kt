@@ -25,6 +25,6 @@ class RegisterRepository {
 
     }
 
-    fun getUserId() = client.id
+    fun getUserId() = client.userId
 
 }
