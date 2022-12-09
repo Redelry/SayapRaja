@@ -10,8 +10,8 @@ class AddJobViewModel : ViewModel() {
     private val repo: AddJobRepository = AddJobRepository()
     val isSuccess : LiveData<Boolean> = repo.isSuccess
 
-    fun addJob(addJobModel: AddJobModel, context: Context,idCorp: String){
-        repo.addJob(addJobModel,context,idCorp)
+    fun addJob(addJobModel: AddJobModel, context: Context){
+        repo.addJob(addJobModel,context)
     }
 
     fun getJobId() = repo.getJobId()

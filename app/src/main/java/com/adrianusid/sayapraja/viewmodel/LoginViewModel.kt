@@ -3,7 +3,6 @@ package com.adrianusid.sayapraja.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.adrianusid.sayapraja.data.LoginRepository
-import com.adrianusid.sayapraja.model.LoginModel
 
 class LoginViewModel : ViewModel(){
 

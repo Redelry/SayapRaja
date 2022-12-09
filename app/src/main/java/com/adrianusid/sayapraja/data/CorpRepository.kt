@@ -1,32 +1,27 @@
 package com.adrianusid.sayapraja.data
 
-import android.content.Context
 import androidx.lifecycle.LiveData
-import com.adrianusid.sayapraja.model.AddJobModel
 import com.adrianusid.sayapraja.model.FirebaseClient
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-class AddJobRepository {
-
+class CorpRepository {
     private val client = FirebaseClient()
 
     private val executorService: ExecutorService = Executors.newSingleThreadExecutor()
-
-    val isSuccess: LiveData<Boolean> = client.isSuccess
-
-
-    fun addJob(addJobModel: AddJobModel, context: Context) {
-
-
+    val corpName : LiveData<String> = client.corpName
+    val corpPhone : LiveData<String> = client.corpPhone
+    val msg : LiveData<String> = client.msg
+    fun getCorpName( id: String){
         executorService.execute {
-            client.addJob(addJobModel, context)
+            client.getCorpName(id)
         }
-
-
     }
 
-
-    fun getJobId() = client.idJob
+    fun getPhoneCorp( id: String){
+        executorService.execute {
+            client.getCorpPhone(id)
+        }
+    }
 
 }

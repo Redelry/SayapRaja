@@ -84,24 +84,6 @@
             app:layout_constraintVertical_chainStyle="packed"
             tools:text="@string/date_add" />
 
-        <ImageButton
-            android:id="@+id/delete"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/ic_baseline_delete_24"
-            android:contentDescription="@string/icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/edit"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/ic_baseline_edit_24"
-            android:contentDescription="@string/icon"
-            app:layout_constraintEnd_toStartOf="@+id/delete"
-            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

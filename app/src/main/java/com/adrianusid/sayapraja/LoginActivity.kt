@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
         register.applyLinks(registerLink)
     }
 
-    //    private fun login(id: String) {
+
     private fun login() {
         val email = binding.email.text.toString()
         val password = binding.password.text.toString()

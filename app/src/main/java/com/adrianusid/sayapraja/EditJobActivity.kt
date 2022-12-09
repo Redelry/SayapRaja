@@ -45,13 +45,13 @@ class EditJobActivity : AppCompatActivity() {
         binding.cancel.setOnClickListener { finish() }
 
         binding.btnSave.setOnClickListener {
-            val position = binding.positionInput.text.toString()
+            val positionJob = binding.positionInput.text.toString()
             val description = binding.descriptionInput.text.toString()
             val requirement = binding.requirementInput.text.toString()
             val dateUpdate = "Edited on ${humanDateFormat(LocalDateTime.now())}"
 
             when {
-                position.isEmpty() -> binding.positionInput.error =
+                positionJob.isEmpty() -> binding.positionInput.error =
                     "Tolong isi posisi pekerjaan yang dibutuhkan oleh perusahaan anda !"
                 description.isEmpty() -> binding.descriptionInput.error =
                     "Tolong isi deskripsi pekerjaan yang ingin ditawarkan !"
@@ -60,11 +60,10 @@ class EditJobActivity : AppCompatActivity() {
                 else -> {
                     data.idJob?.let { id ->
                         jobViewModel.editJob(
-                            position,
+                            positionJob,
                             description,
                             requirement,
                             dateUpdate,
-                            idCorp!!,
                             id
                         )
                     }

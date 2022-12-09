@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.adrianusid.sayapraja.databinding.ActivityAddJobBinding
 import com.adrianusid.sayapraja.model.AddJobModel
 import com.adrianusid.sayapraja.viewmodel.AddJobViewModel
-import com.adrianusid.sayapraja.viewmodel.CorpNameViewModel
+import com.adrianusid.sayapraja.viewmodel.CorpViewModel
 import com.adrianusid.sayapraja.viewmodel.CorpPrefViewModel
 import com.adrianusid.sayapraja.viewmodel.ViewModelFactory
 import java.time.LocalDateTime
@@ -25,11 +25,11 @@ class AddJobActivity : AppCompatActivity() {
     }
 
     private val addJobViewModel: AddJobViewModel by viewModels()
-    private val corpNameViewModel: CorpNameViewModel by viewModels()
+    private val corpViewModel: CorpViewModel by viewModels()
     private lateinit var corpPrefViewModel: CorpPrefViewModel
     private var idCorp: String? = null
     private var corpName: String? = null
-
+    private var corpPhone: String? = null
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,21 +42,22 @@ class AddJobActivity : AppCompatActivity() {
         corpPrefViewModel.getId().observe(this) {
             idCorp = it
             Log.d("IDCORP", it)
-            corpNameViewModel.getCorpName(it)
+            corpViewModel.getCorpName(it)
+            corpViewModel.getCorpPhone(it)
 
         }
-
-        corpNameViewModel.corpName.observe(this) {
+        corpViewModel.corpPhone.observe(this){
+            corpPhone = it
+        }
+        corpViewModel.corpName.observe(this) {
             corpName = it
-
-
             Log.d("ASUS", corpName.toString())
             Log.e("BODO", "ERROR")
 
         }
         binding.btnUpload.setOnClickListener {
             if (idCorp != null && corpName != null) {
-                uploadJob(idCorp!!, corpName!!)
+                uploadJob(idCorp!!, corpName!!,corpPhone!!)
             }
 
         }
@@ -65,7 +66,7 @@ class AddJobActivity : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun uploadJob(idCorp: String, corpName: String) {
+    private fun uploadJob(idCorp: String, corpName: String, phone: String) {
 
         val position = binding.positionInput.text.toString()
 
@@ -90,8 +91,8 @@ class AddJobActivity : AppCompatActivity() {
 
                 addJobViewModel.addJob(
                     AddJobModel(
-                        idCorp, idJob.toString(), corpName, position, description, requirement, date
-                    ), this, idCorp
+                        idCorp, idJob.toString(), corpName, position, description, requirement, date,
+                    phone), this
                 )
                 addJobViewModel.isSuccess.observe(this) {
                     if (it) {
@@ -100,7 +101,7 @@ class AddJobActivity : AppCompatActivity() {
 
                     }
                 }
-                corpNameViewModel.msg.observe(this) {
+                corpViewModel.msg.observe(this) {
                     Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
                 }
 

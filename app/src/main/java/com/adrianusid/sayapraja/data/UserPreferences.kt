@@ -27,14 +27,11 @@ class UserPreferences (context: Context){
         editor?.apply()
     }
     fun getId() : LiveData<String> {
-        id.value = sharedPreferences?.getString("id","")
+        id.value = sharedPreferences?.getString("userId","")
         return id
 
     }
-//
-//    fun saveLogin(role: String) :  LiveData<UserModel> {
-//        editor?.putString()
-//    }
+
 
     fun getLogin(): LiveData<Boolean>{
         login.value = sharedPreferences?.getBoolean("login", false)

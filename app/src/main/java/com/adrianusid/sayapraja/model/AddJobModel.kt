@@ -7,5 +7,6 @@ data class AddJobModel(
     val positionJob : String,
     val description : String,
     val requirement : String,
-    val date: String
+    val date: String,
+    val phone: String
 )

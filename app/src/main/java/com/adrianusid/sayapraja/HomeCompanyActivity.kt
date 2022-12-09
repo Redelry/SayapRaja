@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.adrianusid.sayapraja.adapters.JobListAdapter
 import com.adrianusid.sayapraja.databinding.ActivityHomeCompanyBinding
 import com.adrianusid.sayapraja.databinding.ConfirmDialogBinding
+import com.adrianusid.sayapraja.listeners.OnCardClickListener
 import com.adrianusid.sayapraja.listeners.OnDeleteClickListener
 import com.adrianusid.sayapraja.listeners.OnEditClickListener
 import com.adrianusid.sayapraja.model.ListJobModel
@@ -50,8 +51,10 @@ class HomeCompanyActivity : AppCompatActivity() {
 
         corpPrefViewModel.getId().observe(this) {
             idCorp = it
-            jobViewModel.getData(it)
+            val data = ListJobModel()
+            data.idJob?.let { idJob -> jobViewModel.getData(idJob,it) }
             Log.d("Data", it)
+            Log.d("IDJOBHOME",data.idJob.toString())
         }
 
 
@@ -60,7 +63,7 @@ class HomeCompanyActivity : AppCompatActivity() {
         jobViewModel.data().observe(this) {
 
             if (it != null) adapter?.setJob(it)
-            Log.d("DataJob", "$it")
+            Log.d("DataJobs", "$it")
         }
 
 
@@ -86,13 +89,24 @@ class HomeCompanyActivity : AppCompatActivity() {
             }
 
         })
+        adapter?.setOnCardClickListener(object : OnCardClickListener {
+
+
+
+            override fun onCardClickListJob(data: ListJobModel) {
+                val intent = Intent(this@HomeCompanyActivity, DetailJobCorpActivity::class.java)
+                intent.putExtra(DetailJobCorpActivity.DATA, data)
+                startActivity(intent)
+            }
+
+        })
 
         adapter?.setOnDeleteClickListener(object : OnDeleteClickListener {
             override fun onDeleteClick(data: ListJobModel) {
                 dialog.show()
                 dialogBinding.cancel.setOnClickListener { dialog.dismiss() }
                 dialogBinding.save.setOnClickListener {
-                    data.idJob?.let { id -> jobViewModel.deleteJob(id, idCorp!!) }
+                    data.idJob?.let { id -> jobViewModel.deleteJob(id) }
 
 
                     jobViewModel.isSuccess.observe(this@HomeCompanyActivity) {

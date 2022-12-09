@@ -31,15 +31,15 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/job_photo"
+                android:id="@+id/pdf"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/assets1" />
+                android:src ="@drawable/ic_baseline_picture_as_pdf_24" />
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/tv_company_name"
+            android:id="@+id/tv_applicant_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -52,10 +52,10 @@
             app:layout_constraintStart_toEndOf="@+id/cardView"
             app:layout_constraintTop_toTopOf="@+id/cardView"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="@string/perusahaan" />
+            tools:text="Nama Pelamar" />
 
         <TextView
-            android:id="@+id/tv_position"
+            android:id="@+id/tv_applicant_phone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -65,25 +65,9 @@
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/tv_company_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_applicant_name"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="@string/position" />
-
-        <TextView
-            android:id="@+id/tv_add_date"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/lato_medium"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/tv_position"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="@string/date_add" />
-
+            tools:text="Nomor Telepon" />
         <ImageButton
             android:id="@+id/delete"
             android:layout_width="20dp"
@@ -93,15 +77,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/edit"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/ic_baseline_edit_24"
-            android:contentDescription="@string/icon"
-            app:layout_constraintEnd_toStartOf="@+id/delete"
-            app:layout_constraintTop_toTopOf="parent" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
